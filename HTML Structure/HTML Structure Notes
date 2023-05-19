@@ -1,0 +1,135 @@
+https://softuni.bg/trainings/resources/officedocument/79013/html-structure-presentation-html-and-css-january-2023/3975
+
+With semantic structure we give more information to the browser and to the developers about the intention of our page and its content.
+ 
+The browser uses different analizators to describe and use our page. 
+-Indexing
+-SEO
+-Crawlers - robots
+ 
+The HTML should be clear in order to be stylized later.
+ 
+Semantic tags: -Header - headings, logo, search form
+               -Nav - section with links, typically on the left 
+               Good practice is to use UL
+               (ul-makes list of same type of information)
+               - Main - always in the body, helps crawlers, only one main on a page, holds main content
+               - Aside - side bar on the left or right - we add parallel content to the information the user sees
+               - Footer - information which is not important but must be on every page - copyright data, navigation to secondary pages, legal rights, cookies, etc.
+               - Section - when we want functionally separated sections, may have header, articles, footers. 
+               - Article - if what we make inside is encapsuled photo or independent items, reusable; card element is usually article 
+               - Time - to put index of the time so it is recognizable by the browser
+               - Address - the same as time but for email
+ 
+GLOBAL STRUCTURE - header, main, footer - on one level
+ 
+div - container without added value, block element, from end to end. Makes inline elements-block.
+div role = "list", "heading", etc. - NOT SEMANTIC - div soup - grouping elements without context
+ 
+ 
+Forms - usually input (login) submitted to the page by users
+ 
+<form action=""></form>
+ 
+The form is navigating the user to a specific place;
+the action is where to the user is sent after submitting the <form action=""></form>
+The form method can be post and get. the difference is that the get method shows the data in the url
+ 
+Form elements:
+-input - most important - it has types - text, number, password, email, checkbox, radio, range, button, file, submit
+<input type="text">
+ 
+Input validation:  - occurs when trying to submit; disabled fields to not validate
+<input type="text" required="true">
+ 
+input attributes: value (initial), name, placeholder(hint what to write in the field), required, autofocus, disabled, min, max
+ 
+    <form action=""></form>
+        <label for="name">Name</label>   -the name before the box
+        <input type="text" name="" id="name" value="Initial value" placeholder="Hint: " disabled="true" required>   -the box for input
+        when the id of the input and the for of the label are the same when clicking on the label we are selecting the box; we are making a connection; the value is typed in the box initially (the default is None); if disabled="true" we cannot even click on the field, doesn't work; 
+if required the user cannot submit the form without filling the field.
+ 
+      <div>
+        <label for="volvo">Volvo</label>
+        <input type="checkbox" name="CAR" id="volvo" value="VOLVO" />
+        <label for="bmw">BMW</label>
+        <input type="checkbox" name="CAR" id="bmw" value="BMW" />
+      </div>
+      <h2>Select a location</h2>
+ 
+      <div>
+        <label for="fe">France</label>
+        <input type="radio" name="location" id="fe" value="FE" />
+        <label for="bg">Bulgaria</label>
+        <input type="radio" name="location" id="bg" value="BG" />
+      </div>
+ 
+The number of labels should be the same as number of inputs. 2 by 2 with same for and id. every label should be with different name. With checkbox we can select more than one option. 
+        With radio type we can have only one option - we should make all radio type inputs with the same name; name is the name of the variable!!!
+ 
+If we don't add action to our form, when submitting the form, the html is being refreshed and to the link are added quierry parameters with data from the form:
+file:///C:/Users/Elena%20PC/HTML%20AND%20CSS/HTML%20STRUCTURE/HTMLSTRUCTURE.html?name=Elena+Petkova&pass=6543&CAR=VOLVO&location=FE
+It takes from the input field, the name attribute and attaches value to it (either filled from text box or from checkbox and radio- from value attribute):
+<input type="checkbox" name="CAR" id="bmw" value="BMW" />
+If the type is checkbox it is a good practice the name to be the same!!
+This is because the default method is GET - with it the information is shown in the URL link. With Post it isn't shown!
+ 
+Post is when we want to save data to our server - login, register. 
+Get - search engine. 
+ 
+Fieldset - for stylized input form with <legend> field
+<select> - drop-down list with <option>
+ 
+<textarea> - when we want to write more text, for message - bigger field with scroll option.
+ 
+input type = "number" can accept floats and have , with step="0.01"
+ 
+We should have input validations in the front-end and in the back-end
+ 
+The nesting is not of big importance - it is just visual. What matters is where we close the tag.
+ 
+<button>Submit</button>
+<input type="submit" value="BUTTON TEXT">
+-They do the same but the with the button we have the option to stylize the button. It is better.
+The button can have paragraphs, images, etc. Button can be of type reset (clears data), button (no default behavior), submit..
+If the button is inside form it should be of type SUBMIT !!
+ 
+SEARCH FOR: MOVING LABEL
+ 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+TABS
+ 
+table is the element which defines we have a table 
+tr comes inside - table row
+td comes inside -table data
+ 
+<thead> -- not enough to have stilization; should be used in the tabs, to avoid div (<tfoot as well)
+            <th>Name</th>  - should be th for the text to be bold
+            <th>Exp</th>   - colspan="2" when we want the header to be over 2 cols (we also have rowspan, looks like merge in excel)
+            <th>City</th>
+        </thead>
+        <tr>
+            <td>Eli</td>
+            <td>5</td>
+            <td>Sofia</td>
+        </tr>
+ 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+The clear CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The clear property applies to floating and non-floating elements.
+ 
+/* Keyword values */
+clear: none;
+clear: left;
+clear: right;
+clear: both;
+clear: inline-start;
+clear: inline-end;
+ 
+The :active CSS pseudo-class represents an element (such as a button) that is being activated by the user. When using a mouse, "activation" typically starts when the user presses down the primary mouse button.
+ 
+.joinBtn:active {
+    box-shadow: 2px 2px 5px #fc894d;
+}
