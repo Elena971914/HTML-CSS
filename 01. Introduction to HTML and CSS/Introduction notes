@@ -1,0 +1,168 @@
+Presentation: 
+https://softuni.bg/trainings/resources/officedocument/79010/introduction-to-html-css-presentation-html-and-css-january-2023/3975
+
+When we create a file with .html extension - this file wil be readable by our browsers.
+By typing "html" we get dropdown menu. By selecting "html:5" we receive the basic strucure of html file.
+The other way of receiving the base structure is by typing "!"
+There are many types of elements which make up the structure of the page. 
+ 
+The Web development is like a building: the html code is the base (the bricks of the building), the css is the beauty (the painting) and javascript is the functionality (what happens when we click a button, navigation through the menu).
+ 
+Two types of tags:
+ 
+<p>
+    dummy text
+</p>
+ 
+<img src="" alt="" > - self closing tag. 
+ 
+The browser knows the img is always self closing tag and it can be finished with /> or > 
+ 
+ 
+ 
+<!DOCTYPE html>                  - It is an "information" to the browser about what document type to expect.
+ 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Project</title>     - This appears as a name of the Browser TAB
+</head>
+<body>
+    
+</body>
+</html>
+ 
+- In the Head is the whole information about the page. The HTML <head> element is a container for the following elements: <title>, <style>, <meta>, <link>, <script>, and <base>. 
+The <head> element is a container for metadata (data about data) and is placed between the <html> tag and the <body> tag. Body and Head tags should be on the same level.
+HTML metadata is data about the HTML document. Metadata is not displayed. Metadata typically define the document title, character set, styles, scripts, and other meta info.
+ 
+- The <body> element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc. Note: There can only be one <body> element in an HTML document.  
+ 
+The server opens first the file named "index.html". It may be named differently and then be selected as domain. 
+DEVELOPER TOOL : F12 or Right Click and Inspect
+To save a document - CTRL + S
+ 
+-<p></p> - For writing text
+If we want to enter dummy text - we can just type lorem and hit enter
+ 
+-<a href="https://github.com/simeon-petrov-5/SoftUni-HTML-CSS-Jan-2023" target="_blank">URL External Link<a/> - For sharing links
+First link - what appears
+href is an attribute, configuring a
+target= "_blank" - for opening links in ANOTHER tab
+ 
+<a href="INTRODUCTION.html" target="_blank" title="cur_dir_link" >Local file Link<a/>  - by pressing ctrl + space we open our current directory files - relative link
+ 
+title - shows when we keep the cursor on the link - for additional information
+ 
+<br/> - making a transparеnt line - making empty space - making elements twist from one next to another to one below another
+ 
+<a href="#id1" target="_blank">Local file Link<a/>       - in the href is the #idname
+-Anchor link - local hyperlink - if we make an element with id
+<p id = id1>  Lorem ipsum dolor s......    -The location of the page where we want the link to take us
+ 
+<img src="https://www.thespruce.com/thmb/ZzVUeohbUVKi-SCgLbXEHcj7oRc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Babychick-GettyImages-171143554-5911e8d63df78c92838d4b8c.jpg" alt="Broken Image">
+ 
+src - the path to the image - can be external and relative
+alt - alternative text - shows when the path is broken and the browser cannot find the image
+ 
+Shift + Alt + F - Prettify
+ 
+In the elements which have opening and closing tag we can add other elements(tags). This is called nesting.
+ 
+Ordering many elements is called listing.
+ 
+ 
+- <ol type="i"></ol> - ordered list. Inside we can use only <li><li/> tags (list item). It makes classical bullets, ordered elements.
+ 
+ <ol type="i">
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li>List 4</li>
+    </ol>
+ 
+The type can be 1, A, a, I, i
+ 
+- Unordered list : Types : circle, disc, square, none
+    <ul type="circle">
+        <li>List 1</li>
+        <li>List 6</li>
+        <li>List 4</li>
+        <li>List 4</li>
+    </ul>
+ 
+- Definition lists : Holds terms (<dt>) and their definitions(<dd>)
+ 
+    <dl>
+        <dt>Definition 1 name</dt>
+        <dd>Definition 1 description</dd>
+        <dt>Definition 2 name</dt>
+        <dd>Definition 2 description</dd>
+    </dl>
+ 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+CSS is the way we stylize our HTML
+ 
+selector - the element we want to stylize
+body - between the {}
+we declare properties with values
+; is mandatory at the end of every declaration (line)
+in the <head> we add <link rel="stylesheet" href="style.css"> - style.css is the name of the file with the css code. It should be in the same directory.
+ 
+The selector can be:
+type: h1
+class name: 
+<p class="odd">Text</p>     - In the html file
+.odd {font-size: 10px;}     - In the css file - ( CLASS . )
+id:
+<span id="login">GO</span>  - in the html file
+#login {width: 150px;}      - in the css file - ( id # )
+ 
+The difference is that the ID attribute MUST be unique on the single page. The class can select multiple elements that are similar.
+ 
+we may use many selectors on a single element
+ 
+<a class = "login">Login</a> 
+a.login {width: 90px' }
+ 
+a - link tag
+We want to select all links with class "login"
+We use selector by type "a" and selector by class ".login" - "a.login"
+ 
+For comments we use /* text */    -CTRL + /
+ 
+If we use two or more selectors:
+- we have space between them: .right .left - .left is nested in .right
+- we don't have space we are searching for an element with the both classes (we are searching on one level)
+- , between them - using the same stylization for couple selectors
+ 
+Inline CSS - declaring stylization directly in our html, limited properties
+     <h1 style="color:red; backround:green;">Colored Heading</h>
+style - attribute
+color, background - properties
+red, green - values
+ 
+Embedded CSS: in the head 
+<head>
+  <style>
+  .red {color:red;}
+  </style>
+</head>
+ 
+<body>
+  <p class="red">This is red</p>
+</body>
+ 
+Both methods are disturbing "separation of concerns"- difficult to override.
+ 
+Block element is every element which is distributed on the whole line. The titles, paragraphs, etc.
+Inline Elements: links, span, bold, strong, images - big as much as their content. They may be on many lines and may take only part of the line.
+Inline-Block Elements: if there is enough space- their width is selected by their content but may not be on multiple lines.
+ 
+class = "some class" - two classes(some, class), not a good practice to use class (it is a keyword)
+ 
+Use responsive model of the devtool for managing the pixels.
+There should be between 70 and 120 characters on a line by convention.
