@@ -1,0 +1,89 @@
+CSS and Typography
+ 
+.lorem.text2 - search the both classes in a single element
+.lorem .text2 - search for nested .text2 in .lorem
+ 
+The selector with more classes is stronger. 
+If there are two selectors with the same classes the browser uses the last (latest). It reads line by line. Inspection tool works different. It shows first the active selectors.
+ 
+The specificity is ordering selectors by style attribute, id, class and pseudo-lass (hover, active, visible, etc.), elements (p,h1,etc)
+ 
+ul#nav li.active a
+ ul has nav in it 
+inside the ul is li with class active
+inside there is a
+113 points selector
+ 
+body.ie7 .col_3 h2 h2
+0023 points selector
+ 
+li style=color:red 
+1000 points selector - inline stylization is very hard to be overwritten.
+ 
+If we write !important after the stylization - it takes 100000 points, but it is not a good practice to use it too often.  text-align: center !important;
+ 
+ 
+.unordered > .lorem - searching for directed children class
+.unordered .lorem - all children
+ 
+When two selectors are with equal points - we use the latest- overwrite
+ 
+It matters what the order of the stylesheets in the head is!
+ 
+@font-face {
+    font-family: "NameOfImported";      -what we write in ex.: p {font-family: "NameOfImported"}
+    src: url('fonts/NameOfImported')}
+-we are registering the font for our browser
+ 
+em - relative to original size
+px - relative to smth
+ 
+When nesting with em - the parent is 1,2, the children is 1,2 * 1,2, the next children - 1,2*1,2*1,2; better to use rem - the base rem works with is the html tag: html {font-size: 8px}
+ 
+font-weight - bolding; bold tag is 700 
+font-style - oblique, italic, normal
+text-align - center, left (default), right, justify
+text-decoration: line-through, text-indent
+text-overflow: clip, ellipsis (if the container is broken we get ...)
+white-space: break-spaces, unset, nowrap (break the container)
+overflow: scroll, hidden (to get ...) - controlling what happens to the content which is too wide
+text-transform: uppercase, capitalize, lowercase 
+word-break- break-all, keep-all(normal) - how to enter new line
+background-color
+cursor: cell, copy, grab, pointer, etc.
+outline: 50px solid red
+letter-spacing: 2px
+line-height: 30 - can work without values(px)
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" - we are using their fonts
+    />    - v5.10.2 - go to their site, search icon, select version!
+ 
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    <h1>Test3</h1>
+    <a href="#"><i class="fa fa-home fa-fw"></i>Home</a>   - using these classes we are visualising their logos.
+    <a href="#"><i class="fas fa-yin-yang"></i>Home</a>
+    <a href="#"><i class="fad fa-yin-yang"></i>Home</a>
+  </body>
+</html>
+ 
+font-awesome cdnjs - free links 
+ 
+@import (at rule, for css for importing urls) "link" in css and link tag to the css in the head with link tag
+or
+adding external library to the head directly with link tag- better control
+ 
+@import url("link")
+ 
+hover - when we put the cursor over an element
