@@ -1,0 +1,184 @@
+Positioning and grid
+ 
+Presentation: https://softuni.bg/trainings/resources/officedocument/79022/position-grid-presentation-html-and-css-january-2023/3975
+ 
+Layout - basic composition of elements
+Grid- visual control
+ 
+Search for: css custom properties
+ 
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 200px); */
+    gap: 16px 32px;
+}
+ 
+ 
+/* we say to the container to work as a grid and make 3 colums of 1fr (fraction) width ; to make the first larger- grid-template-columns: 2fr(or 200px), repeat(2, 1fr);
+gap - the space between the elements - 16 up and down ,32 left and right;
+it is good to set the elements width in percentage;
+The width of picture in grid container is good to be the maximum width of the container;
+*/
+ 
+When mixing fraction with pixels - the grid takes the width of the container - uses first the pixels and then the rest of the width - divides in fractions;
+ 
+The grid takes every direct child.
+ 
+.grid-container {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(6, 100px);
+  /* 6 cells with 100 px */
+  grid-template-rows: repeat(6, 100px);
+  /* define the element on every cell; always use quates on every line*/
+  grid-template-areas:
+    "head head head head head head"
+    "side . content content content content"
+    "side . content content content content"
+    "side . content content content content"
+    "side . content content content content"
+    "foot foot foot foot foot foot";
+}
+ 
+/* should be with the same count of elements as the size of the grid ; only straight lines of elements from end to end;
+. - no elements*/
+ 
+.header{
+    background-color: lightsalmon;
+    grid-area: foot;
+}
+/* the same name (foot) without brackets */
+ 
+GRID GARDEN: https://cssgridgarden.com/#bg
+ 
+Positioning is property in css which can be: static, relative, absolute, fixed, sticky; 
+Properties of positions: bottom, top, left, right
+ 
+Static:
+HTML elements are positioned static by default. Static positioned elements are not affected by the top, bottom, left, and right properties. An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page
+ 
+Relative:
+An element with position: relative; is positioned relative to its normal position. Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+ 
+Absolute:
+An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling. Note: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+ 
+Fixed: 
+An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. A fixed element does not leave a gap in the page where it would normally have been located.
+ 
+Sticky:
+An element with position: sticky; is positioned based on the user's scroll position. A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). Note: Internet Explorer does not support sticky positioning. Safari requires a -webkit- prefix (see example below). You must also specify at least one of top, right, bottom or left for sticky positioning to work.
+ 
+ 
+Z-indexing:
+When elements are positioned, they can overlap other elements. The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others). An element can have a positive or negative stack order
+z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) and flex items
+If two positioned elements overlap each other without a z-index specified, the element defined last in the HTML code will be shown on top.
+ 
+Float: 
+The float property is used for positioning and formatting content e.g. let an image float left to the text in a container. The float property can have one of the following values:
+left - The element floats to the left of its container
+right - The element floats to the right of its container
+none - The element does not float (will be displayed just where it occurs in the text). This is default
+inherit - The element inherits the float value of its parent
+In its simplest use, the float property can be used to wrap text around images.
+ 
+clearfix - If an element is taller than the element containing it, and it is floated, it will overflow outside of its container. add class:
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+ 
+display:none - erases element
+visibility:hidden - hides element
+ 
+page flow/flow - page layout - how elements are positioned
+ 
+Positioning and grid- exercise
+ 
+How to center div:
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-size: 0px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+/* height is dynamic, cannot be set; 
+vh-viewport (browser) height 
+vw- for viewport width*/
+ 
+/* .hero img {
+  height:20vw;
+  width:20vw;   -20% of the browser width
+  this makes dynamic square image which changes it size when expanding and shrinking the browser*/
+.hero {
+  background-color: orange;
+  height: 100vh;
+  position: relative;
+}
+ 
+.hero .hero__img {
+  /* 100% of the parent */
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+ 
+.hero .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* moving our element without moving the position, for visual effect; 50 percentage of the box container */
+  text-align: center;
+}
+ 
+/* pseudo-element :: ; always should have content; makes another layer*/
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+  opacity: 0.2;
+}
+ 
+.designer-card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+  z-index: 1;
+  transition: opacity 300ms ease-in-out;
+}
+ 
+.designer-card .img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease-in-out;
+}
+ 
+/* HOVER EFFECT */
+.designer-card:hover .img-bg {
+  transform: scale(1.3);
+}
+.designer-card:hover::before {
+  opacity: 0.6;
+}
