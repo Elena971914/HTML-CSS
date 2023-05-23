@@ -1,0 +1,30 @@
+Media Queries
+ 
+Presentation: https://softuni.bg/trainings/resources/officedocument/79029/media-queries-presentation-html-and-css-january-2023/3975
+ 
+www.Utopia.fyi
+ 
+What is responsive web design?
+The idea that the design can be adjusted to the device. 
+Responsive Web design is the approach that suggests that design and development should respond to the user's behavior and environment based on screen size, platform and orientation. The practice consists of a mix of flexible grids and layouts, images and an intelligent use of CSS media queries.
+ 
+How to order the media queries: 
+if we use min-width, mobile first, the less are first - 400px, 600px, 800px; 
+if we use max-width, desktop first- the bigger widths are first: 800px, 600px, 400px...
+ 
+What are media queries?
+Media queries can modify the appearance (and even behavior) or a website or app based on a matched set of conditions about the user’s device, browser or system settings.
+CSS Media queries are a way to target browser by certain characteristics, features, and user preferences, then apply styles or run other code based on those things.
+Media queries can be used to check many things, such as:
+width and height of the viewport
+width and height of the device
+orientation (is the tablet/phone in landscape or portrait mode?)
+resolution
+Using media queries are a popular technique for delivering a tailored style sheet to desktops, laptops, tablets, and mobile phones (such as iPhone and Android phones).
+ 
+Media types:
+Media types define the broad category of device for which the media query applies: all, print, screen. The type is optional (assumed to be all) except when using the not or only logical operators.
+ 
+Media Feature rules:
+Media features describe a specific characteristic of the user agent, output device, or environment:
+any-hover, any-pointer, aspect-ratio, color, color-gamut, color-index, device-aspect-ratio Deprecated, device-height Deprecated, device-width Deprecated, display-mode, dynamic-range, forced-colors, grid, height, hover, inverted-colors, monochrome, orientation, overflow-block, overflow-inline, pointer, prefers-color-scheme, prefers-contrast, prefers-reduced-motion, prefers-reduced-transparency, Experimental, resolution, scripting, update, video-dynamic-range, width.
