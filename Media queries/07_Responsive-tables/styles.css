@@ -1,0 +1,52 @@
+body {padding:20px; color:lightgrey}
+
+table {width:90vw;
+}
+
+thead {background-color:grey;
+color:white;
+font-weight: bold;
+text-align: left;}
+
+td {border: 1px solid lightgrey;
+border-collapse: collapse;}
+
+tbody tr:nth-child(1) {background-color: lightgray; color:black}
+tbody tr:nth-child(2) {background-color: white; color: black}
+ 
+@media screen and (max-width: 600px) {
+    tbody tr:nth-child(1) {background-color: white;}
+    table {
+      border: 0;
+    }
+
+    table thead {
+      display: none;
+    }
+
+    table tr {
+      /* margin-bottom: 10px; */
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+
+    table td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }
+
+    table td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  /* https://codepen.io/ignaty/pen/YErbMb */
