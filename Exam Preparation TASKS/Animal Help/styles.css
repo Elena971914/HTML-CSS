@@ -1,0 +1,224 @@
+:root {
+  --lightblue: hsl(197.21deg 100% 76.08%);
+  /* --black:hsl(0deg 0% 0%);
+    --white:hsl(0deg 0% 100%); */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 62vw;
+  margin: 0 auto;
+}
+
+/* Header */
+
+header {
+  font-weight: 700;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2px 30px 0px 70px;
+  font-size: 14px;
+}
+
+.navigation {
+  display: inline-flex;
+}
+
+.navigation__list {
+  display: inline-flex;
+  list-style-type: none;
+  gap: 18px;
+}
+
+.navigation__list li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+/* FIRST SECTION */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--lightblue);
+  padding: 0 50px 0 100px;
+  margin-bottom:18px
+}
+
+.hero__content {
+  text-align: left;
+  width: 50%;
+}
+
+.hero__content h1 {
+  font-size: 20px;
+  margin-bottom:12px
+}
+
+.hero__content p {
+    font-size:10px;
+    margin-bottom: 28px;
+    padding-right:20px
+}
+
+button {padding:8px 46px;
+border-radius: 6px;
+border:1px solid black;
+font-size: 12px;
+}
+
+.hero__first_button {margin-right: 14px;}
+
+.black {color:white;
+background-color: black;}
+
+.hero__img {
+    height: 340px;
+  }
+
+/* SECOND SECTION */
+
+.second-section {text-align: center;
+    margin-bottom:30px
+}
+
+.second-section h2 {font-size:15px;
+margin-bottom: 20px;}
+
+.second-section>p { font-size: 10px;
+font-weight: 600;
+letter-spacing: 2px;padding:0 284px;
+margin-bottom: 40px;}
+
+.second-section__features {display:flex;
+justify-content: space-around;
+/* gap:10px; */
+padding:0 30px}
+
+.feature i {color: var(--lightblue);
+font-size: 90px;}
+
+.feature h3 {margin:20px 0;
+font-size: 14px;}
+
+.feature p {font-size: 10px;
+padding:0 30px;
+letter-spacing: 1px;}
+
+/* THIRD SECTION */
+
+.third-section {
+    text-align: center;
+padding:54px 200px;
+background-color: var(--lightblue);}
+
+.third-section h2 {font-size:20px;
+margin-bottom:42px}
+
+.third-section__container {display:inline-flex;
+gap:40px;
+margin-bottom: 20px;
+}
+
+.container__column {display: grid;
+grid-template-rows: repeat(3, 1fr);
+padding-left:20px; 
+width:50%;
+}
+
+.container__column span {font-size: 14px;height:65px;
+position:relative}
+
+.container__column span::before {content:"⚫️";
+position:absolute;left:-20px}
+
+/* FORTH SECTION */
+
+.forth-section {text-align: center;
+margin-bottom: 30px;}
+
+.forth-section h2 {margin:20px 0 10px 0;
+font-weight: 900;
+font-size: 30px;}
+
+.description {
+    font-size: 12px;
+}
+
+.pictures {width:100%;
+display:flex;
+justify-content: space-evenly;
+padding:20px 18px;
+height:210px;}
+
+.pictures img {width:190px;
+    object-fit: cover;
+}
+
+/* FIFTH SECTION */
+
+.fifth-section {text-align: center;font-size: 12px;
+margin-bottom:60px}
+
+.fifth-section__container {border-radius: 6px;border-left:1px solid var(--lightblue);
+height:100px;
+width:77%;
+margin:20px auto;
+text-align: left;
+height:150px}
+
+.fifth-section__container:nth-child(3) {
+    border-bottom: 1px solid var(--lightblue);
+}
+
+.fifth-section__container h3 {background-color: var(--lightblue);
+height:50px;
+padding:18px 22px;
+font-size: 13px;
+}
+
+.fifth-section__container p {padding:18px 22px;
+    font-weight: 700;
+    font-size:11px
+}
+
+/* SIXTH SECTION */
+.sixth-section {display: inline-flex;}
+
+.sixth-section img {width:50%;
+display: inline-flex;}
+
+.sixth-section__container {width:43%;
+padding:60px 0px 30px 50px}
+
+.sixth-section__container h2 {font-size: 20px;}
+
+.sixth-section__container p {font-size: 10px;
+margin:20px 0 30px}
+
+.sixth-section__container input {width:57%;
+height:36px;
+font-size:10px;
+color:black; padding-left:10px;
+border-radius: 6px;
+border:1px solid lightgray;
+display:block;
+margin-bottom:26px}
+
+/* FOOTER */
+
+footer {display: flex; justify-content: space-between;
+padding:20px 48px 0 54px;
+align-items: first baseline;}
+
+.icons {font-size: 20px;
+display: flex;
+gap:13px;
+}
+
+.copyright {font-size: 8px;
+font-weight: 800;}

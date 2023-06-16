@@ -1,0 +1,30 @@
+@media (max-width:600px) {
+    
+/* Navigation */
+.navigation-nav {display: none;}
+
+/* Extra space after button */
+.home-text-container {margin-bottom:30px}
+
+/* One line pictures */
+.home-tab-selector-cards-container {display: block;}
+
+/* extra space after every picture container */
+.portofolio-card-speaker-card {
+    margin-bottom: 30px}
+
+
+.section-container {padding-top:50px;
+padding-bottom:30px}
+
+.home-max-width1 {flex-direction: column;}
+
+.home-image-container {display: none;}
+
+.home-top-part {flex-direction: column;}
+
+.home-links-container {flex-direction:column}
+
+.home-links-container>*{margin-bottom: 20px;}
+
+}
